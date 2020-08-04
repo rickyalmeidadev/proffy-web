@@ -26,7 +26,8 @@
     "rules": {
         "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
         "import/no-unresolved": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "react/prop-types": "off"
 
     }
 }
