@@ -10,7 +10,7 @@ interface IProps {
   title: string;
 }
 
-const PageHeader: React.FC<IProps> = ({ title }) => (
+const PageHeader: React.FC<IProps> = ({ title, children }) => (
   <header className="page-header">
     <div className="top-bar-container">
       <Link to="/">
@@ -21,6 +21,7 @@ const PageHeader: React.FC<IProps> = ({ title }) => (
 
     <div className="header-content">
       <strong>{title}</strong>
+      {children}
     </div>
   </header>
 );
