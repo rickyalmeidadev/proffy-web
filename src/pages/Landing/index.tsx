@@ -15,7 +15,7 @@ const Landing: React.FC = () => (
     <div id="page-landing-content" className="container">
       <div className="logo-container">
         <img src={logoImg} alt="Proffy" />
-        <h2>Sua plataforma de estudos onlinadd TeacherForm page initial structuree.</h2>
+        <h2>Sua plataforma de estudos online.</h2>
       </div>
 
       <img
@@ -38,7 +38,6 @@ const Landing: React.FC = () => (
 
       <span className="total-connections">
         Total de 200 conexões já realizadas
-        {' '}
         <img src={purpleHeartIcon} alt="Coração roxo" />
       </span>
     </div>
