@@ -4,7 +4,7 @@ import Landing from './pages/Landing';
 import TeachersList from './pages/TeachersList';
 import TeacherForm from './pages/TeacherForm';
 
-const Routes = () => (
+const Routes: React.FC = () => (
   <Router>
     <Route exact path="/" component={Landing} />
     <Route exact path="/estudar" component={TeachersList} />
