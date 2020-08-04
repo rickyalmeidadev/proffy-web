@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Landing from './pages/Landing';
+import Routes from './Routes';
 
 import './assets/styles/global.css';
 
-const App: React.FC = () => (
-  <Landing />
-);
+const App: React.FC = () => <Routes />;
 
 export default App;
