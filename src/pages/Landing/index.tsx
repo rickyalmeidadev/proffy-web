@@ -25,12 +25,12 @@ const Landing: React.FC = () => (
       />
 
       <div className="buttons-container">
-        <Link to="/study" className="study">
+        <Link to="/estudar" className="study">
           <img src={studyIcon} alt="Estudar" />
           Estudar
         </Link>
 
-        <Link to="/give-classes" className="give-classes">
+        <Link to="/dar-aulas" className="give-classes">
           <img src={giveClassesIcon} alt="Dar aulas" />
           Dar aulas
         </Link>
