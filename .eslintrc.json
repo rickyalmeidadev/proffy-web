@@ -28,7 +28,8 @@
         "import/no-unresolved": "off",
         "import/extensions": "off",
         "react/prop-types": "off",
-        "jsx-a11y/label-has-associated-control": "off"
-
+        "jsx-a11y/label-has-associated-control": "off",
+        "no-unused-vars": "off",
+        "react/jsx-props-no-spreading": "off"
     }
 }
