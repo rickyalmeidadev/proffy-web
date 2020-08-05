@@ -1,8 +1,12 @@
 import React from 'react';
+import PageHeader from '../../components/PageHeader';
 
 const TeacherForm: React.FC = () => (
-  <div>
-    TeacherForm
+  <div id="page-teacher-form" className="container">
+    <PageHeader
+      title="Que incŕivel que você quer dar aulas."
+      description="O primeiro passo é preencher esse formulário de inscrição"
+    />
   </div>
 );
 
