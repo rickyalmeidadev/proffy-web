@@ -30,6 +30,7 @@
         "react/prop-types": "off",
         "jsx-a11y/label-has-associated-control": "off",
         "no-unused-vars": "off",
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "arrow-parens": "off"
     }
 }
