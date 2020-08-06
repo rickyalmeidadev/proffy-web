@@ -18,7 +18,7 @@ const TeachersList: React.FC = () => (
             { value: 'Artes', label: 'Artes' },
             { value: 'Biologia', label: 'Biologia' },
             { value: 'Educação física', label: 'Educação física' },
-            { value: 'Física', label: 'Geografia' },
+            { value: 'Física', label: 'Física' },
             { value: 'Geografia', label: 'Geografia' },
             { value: 'História', label: 'História' },
             { value: 'Inglês', label: 'Inglês' },
