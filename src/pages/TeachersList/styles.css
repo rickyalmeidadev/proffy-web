@@ -34,4 +34,9 @@
     max-width: 740px;
     margin: 0 auto;
   }
+
+  #search-teachers .input-block + .input-block,
+  #search-teachers .select-block + .select-block {
+    margin-top: 0;
+  }
 }
