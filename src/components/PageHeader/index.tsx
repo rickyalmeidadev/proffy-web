@@ -8,7 +8,7 @@ import './styles.css';
 
 interface IProps {
   title: string;
-  description?: string
+  description?: string;
 }
 
 const PageHeader: React.FC<IProps> = ({ title, description, children }) => (

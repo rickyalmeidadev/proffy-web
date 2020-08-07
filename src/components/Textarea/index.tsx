@@ -3,7 +3,7 @@ import React, { TextareaHTMLAttributes } from 'react';
 import './styles.css';
 
 interface IProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  name: string
+  name: string;
   label: string;
 }
 

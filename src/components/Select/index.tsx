@@ -3,12 +3,12 @@ import React, { SelectHTMLAttributes } from 'react';
 import './styles.css';
 
 interface IProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  name: string
+  name: string;
   label: string;
   options: Array<{
     value: string;
     label: string;
-  }>
+  }>;
 }
 
 const Select: React.FC<IProps> = ({
