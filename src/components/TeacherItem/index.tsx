@@ -3,7 +3,7 @@ import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import './styles.css';
-import api from '../../services/api';
+import Client from '../../services/api';
 
 interface IProps {
   teacher: {
@@ -14,8 +14,10 @@ interface IProps {
     cost:number,
     subject: string,
     whatsapp: string,
-  }
+  };
 }
+
+const { createConnection } = new Client();
 
 const TeacherItem: React.FC <IProps> = ({ teacher }) => {
   const cost = new Intl.NumberFormat(
@@ -23,9 +25,7 @@ const TeacherItem: React.FC <IProps> = ({ teacher }) => {
   ).format(teacher.cost);
 
   const createNewConnection = () => {
-    api.post('/connections', {
-      user_id: teacher.id,
-    });
+    createConnection(teacher.id);
   };
 
   return (

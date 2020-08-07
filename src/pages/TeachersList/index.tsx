@@ -1,5 +1,5 @@
 import React, { useState, FormEvent } from 'react';
-import api from '../../services/api';
+import Client from '../../services/api';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
@@ -9,14 +9,16 @@ import Input from '../../components/Input';
 import Select from '../../components/Select';
 
 interface Teacher {
-    id: number;
-    name: string;
-    avatar: string;
-    bio: string;
-    cost:number;
-    subject: string;
-    whatsapp: string;
+  id: number;
+  name: string;
+  avatar: string;
+  bio: string;
+  cost:number;
+  subject: string;
+  whatsapp: string;
 }
+
+const { getTeachers } = new Client();
 
 const TeachersList: React.FC = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
@@ -27,12 +29,10 @@ const TeachersList: React.FC = () => {
   const handleSearchTeachers = async (event: FormEvent) => {
     event.preventDefault();
 
-    const response = await api.get('/classes', {
-      params: {
-        subject,
-        week_day: weekDay,
-        time,
-      },
+    const response = await getTeachers({
+      subject,
+      weekDay,
+      time,
     });
 
     setTeachers(response.data);

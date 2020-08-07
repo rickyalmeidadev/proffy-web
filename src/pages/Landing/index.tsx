@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Client from '../../services/api';
 
 import logoImg from '../../assets/images/logo.svg';
 import landingImg from '../../assets/images/landing.svg';
@@ -9,14 +10,15 @@ import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
 import './styles.css';
-import api from '../../services/api';
+
+const { getConnections } = new Client();
 
 const Landing: React.FC = () => {
   const [totalConnections, setTotalConnections] = useState(0);
 
   useEffect(() => {
     (async () => {
-      const response = await api.get('connections');
+      const response = await getConnections();
       setTotalConnections(response.data.total);
     })();
   }, []);

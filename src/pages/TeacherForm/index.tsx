@@ -1,5 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
+import Client from '../../services/api';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
@@ -9,7 +10,8 @@ import Select from '../../components/Select';
 import warningIcon from '../../assets/images/icons/warning.svg';
 
 import './styles.css';
-import api from '../../services/api';
+
+const { createClass } = new Client();
 
 const TeacherForm: React.FC = () => {
   const history = useHistory();
@@ -50,7 +52,7 @@ const TeacherForm: React.FC = () => {
     };
 
     try {
-      await api.post('/classes', body);
+      await createClass(body);
       alert('Cadastro efetuado com sucesso');
       history.push('/');
     } catch (error) {
