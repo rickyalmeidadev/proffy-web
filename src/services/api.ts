@@ -37,12 +37,17 @@ interface ICreateClassBody {
 }
 
 export default class Client {
-  private api: AxiosInstance;
+  public api: AxiosInstance;
 
   constructor() {
     this.api = axios.create({
       baseURL: 'http://localhost:5000',
     });
+
+    this.getConnections = this.getConnections.bind(this);
+    this.getTeachers = this.getTeachers.bind(this);
+    this.createConnection = this.createConnection.bind(this);
+    this.createClass = this.createClass.bind(this);
   }
 
   async getConnections() {
@@ -50,7 +55,7 @@ export default class Client {
   }
 
   async getTeachers(params: ITeacherParams) {
-    return this.api.get<ITeacher[]>('/connections', {
+    return this.api.get<ITeacher[]>('/classes', {
       params: {
         subject: params.subject,
         week_day: Number(params.weekDay),
@@ -66,8 +71,6 @@ export default class Client {
   }
 
   async createClass(body: ICreateClassBody) {
-    return this.api.post<ITeacher>('/connections', {
-      body,
-    });
+    return this.api.post<ITeacher>('/classes', body);
   }
 }
