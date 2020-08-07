@@ -34,6 +34,7 @@
         "arrow-parens": "off",
         "react/jsx-one-expression-per-line": "off",
         "no-console": "off",
-        "no-alert": "off"
+        "no-alert": "off",
+        "camelcase": "off"
     }
 }
