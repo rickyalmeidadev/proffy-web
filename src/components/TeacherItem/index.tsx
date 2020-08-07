@@ -3,35 +3,63 @@ import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import './styles.css';
+import api from '../../services/api';
 
-const TeacherItem: React.FC = () => (
-  <article className="teacher-item">
-    <header>
-      <img
-        src="https://avatars1.githubusercontent.com/u/60705947?s=460&u=e8e6bbb598b37394cc1a783a494b66b4e48eab2f&v=4"
-        alt="Ricky Almeida"
-      />
-      <div>
-        <strong>Ricky Almeida</strong>
-        <span>Desenvolvimento Web</span>
-      </div>
-    </header>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus sequi suscipit
-      veniam vero hic omnis excepturi consectetur qui repellendus explicabo reiciendis
-      recusandae minima iusto, laborum enim aliquid eaque accusamus. Magnam.
-    </p>
-    <footer>
+interface IProps {
+  teacher: {
+    id: number,
+    name: string,
+    avatar: string,
+    bio: string,
+    cost:number,
+    subject: string,
+    whatsapp: string,
+  }
+}
+
+const TeacherItem: React.FC <IProps> = ({ teacher }) => {
+  const cost = new Intl.NumberFormat(
+    'pt-BR', { style: 'currency', currency: 'BRL' },
+  ).format(teacher.cost);
+
+  const createNewConnection = () => {
+    api.post('/connections', {
+      user_id: teacher.id,
+    });
+  };
+
+  return (
+    <article className="teacher-item">
+      <header>
+        <img
+          src={teacher.avatar}
+          alt={teacher.name}
+        />
+        <div>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
+        </div>
+      </header>
       <p>
-        Preço/hora
-        <strong> R$ 80,00</strong>
+        {teacher.bio}
       </p>
-      <button type="button">
-        <img src={whatsappIcon} alt="Whatsapp" />
-        Entrar em contato
-      </button>
-    </footer>
-  </article>
-);
+      <footer>
+        <p>
+          Preço/hora
+          <strong>{cost}</strong>
+        </p>
+        <a
+          href={`https://wa.me/${teacher.whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={createNewConnection}
+        >
+          <img src={whatsappIcon} alt="Whatsapp" />
+          Entrar em contato
+        </a>
+      </footer>
+    </article>
+  );
+};
 
 export default TeacherItem;
