@@ -82,25 +82,25 @@ const TeacherForm: React.FC = () => {
               name="name"
               label="Nome completo"
               value={name}
-              onChange={(event) => setName(event.target.value)}
+              onChange={event => setName(event.target.value)}
             />
             <Input
               name="avatar"
               label="Avatar"
               value={avatar}
-              onChange={(event) => setAvatar(event.target.value)}
+              onChange={event => setAvatar(event.target.value)}
             />
             <Input
               name="whatsapp"
               label="WhatsApp"
               value={whatsapp}
-              onChange={(event) => setWhatsapp(event.target.value)}
+              onChange={event => setWhatsapp(event.target.value)}
             />
             <Textarea
               name="bio"
               label="Biografia"
               value={bio}
-              onChange={(event) => setBio(event.target.value)}
+              onChange={event => setBio(event.target.value)}
             />
           </fieldset>
 
@@ -123,13 +123,13 @@ const TeacherForm: React.FC = () => {
                 { value: 'Química', label: 'Química' },
               ]}
               defaultValue={subject}
-              onChange={(event) => setSubject(event.target.value)}
+              onChange={event => setSubject(event.target.value)}
             />
             <Input
               name="cost"
               label="Custo da sua hora por aula"
               value={cost}
-              onChange={(event) => setCost(event.target.value)}
+              onChange={event => setCost(event.target.value)}
             />
           </fieldset>
 
